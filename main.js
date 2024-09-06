@@ -1,6 +1,6 @@
 let btnPart1 = document.getElementById('btn-1');
 let btnPart2 = document.getElementById('btn-2');
-
+let btnPart3 = document.getElementById('btn-3');
 
 function part_1() {
     let this_is_number = 1;
@@ -29,28 +29,41 @@ function part_1() {
 
 
 
+function part_2() {
 
-
-function chatWithDream() {
-    confirm("Привіт друже! Я Мрія ;) Поговоримо? Якщо ти готовий, натисни ОК!");
-    let data = {
-        name: prompt("Напиши як звати тебе:"),
-        dream: prompt("Розкажи мені про свою мрію:"),
-        futureMessage: prompt("Що скажешь собі майбутньому?")
+    function chatWithDream() {
+        confirm("Привіт друже! Я Мрія ;) Поговоримо? Якщо ти готовий, натисни ОК!");
+        let data = {
+            name: prompt("Напиши як звати тебе:"),
+            dream: prompt("Розкажи мені про свою мрію:"),
+            futureMessage: prompt("Що скажешь собі майбутньому?")
+        }
+        printMessage(data);
     }
-    printMessage(data);
+    function printMessage(data) {
+        console.log('Lesson 3, part 2.');
+        console.log(`✨ Привіт, ${data.name}! Ти поділився чимось неймовірним! ✨`);
+        console.log(`💭 Твоя мрія: "${data.dream}" – звучить дуже надихаюче!`);
+        console.log(`⏳ А от що ти скажеш собі в майбутньому: "${data.futureMessage}".`);
+        console.log("🚀 Сподіваюся, що всі твої мрії збудуться! Ти на правильному шляху! ✨");
+        console.log('-------------------');
+    }
+
+    chatWithDream();
 }
-function printMessage(data) {
-    console.log('Lesson 3, part 2.');
-    console.log(`✨ Привіт, ${data.name}! Ти поділився чимось неймовірним! ✨`);
-    console.log(`💭 Твоя мрія: "${data.dream}" – звучить дуже надихаюче!`);
-    console.log(`⏳ А от що ти скажеш собі в майбутньому: "${data.futureMessage}".`);
-    console.log("🚀 Сподіваюся, що всі твої мрії збудуться! Ти на правильному шляху! ✨");
-    console.log('-------------------');
+
+
+function part_3 () {
+    function splitNumber(number) {
+        let digits = number.toString().split('').join(' ');
+        console.log(digits); 
+    }
+    splitNumber(10369);
 }
+
 
 //--------------------------------------------------
 btnPart1.addEventListener('click', part_1);
-btnPart2.addEventListener('click', chatWithDream);
-
+btnPart2.addEventListener('click', part_2);
+btnPart3.addEventListener('click', part_3);
 
